@@ -1,20 +1,14 @@
-public class middlelinkedlist {
-    public ListNode reverseList(ListNode head) {
+class middlelinkedlist {
+    public ListNode middleNode(ListNode head) {
 
-        ListNode prev = null;
-        ListNode curr = head;
+        ListNode slow = head;
+        ListNode fast = head;
 
-        while(curr != null) {
-            ListNode next = curr.next;
-
-            curr.next = prev;
-
-            prev = curr;
-            curr = next;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
-        return prev;
+        return slow;
     }
-} {
-    
 }
